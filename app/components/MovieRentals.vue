@@ -1,7 +1,6 @@
 <template>
     <Page>
-        <ActionBar :title="'Customers that rented ' + movie_title" android:flat="true"/>
-        <ListView for="rental in rentals" class="list-group" style="height:100%">
+        <ListView for="rentals" class="list-group" style="height:100%">
             <v-template>
                 <movie-rental-history :rental="rental"></movie-rental-history>
             </v-template>
@@ -20,7 +19,7 @@
     export default {
         data() {
             return {
-                movie_title: '',
+                movie_title: [],
                 rentals: []
             }
         },
@@ -28,24 +27,16 @@
             read() {
                 let url = 'https://codeflare.tech/api/movies/' + this.id + '/rentals'
                 axios.get(url).then(({data}) => {
-                    this.movie_title = data[0].title;
-                    console.log('Name is: ' + this.movie_title + '-------');
-                    console.log(data[0]);
+                    this.movie_title[] = data[0].title;
                     data[0].rentals.forEach(rental => {
-                        this.rentals.push(new Rental(rental))
+                        this.rentals.push(new Rental)
                     });
-                }, error => {
-                    console.error(error);
-                })
+                },
             }
         },
         components: {
             MovieRentalHistory
         },
-        props: ['id'],
-        created() {
-            this.read()
-        }
     }
 </script>
 

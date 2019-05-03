@@ -1,10 +1,10 @@
 <template>
     <Page>
-        <ActionBar title="Welcome to Yellow Bucket!" android:flat="true"/>
-        <TabView tabBackgroundColor="#05386B"
-                 androidSelectedTabHighlightColor="#379683"
-                 tabTextColor="#EDF5E1"
-                 selectedTabTextColor="#EDF5E1">
+        <ActionBar title="RedBlox" android:flat="true"/>
+        <TabView tabBackgroundColor="#f24d4d"
+                 androidSelectedTabHighlightColor="white"
+                 tabTextColor="#afafaf"
+                 selectedTabTextColor="white">
             <TabViewItem title="Movies">
                 <movie-component :movies="movies"></movie-component>
             </TabViewItem>
@@ -21,6 +21,7 @@
 </template>
 
 <script>
+console.log("hello");
     import axios from "axios";
     import CustomerComponent from '@/components/CustomerComponent.vue';
     import MovieComponent from '@/components/MovieComponent.vue';
@@ -90,7 +91,7 @@
 
 <style scoped>
     ActionBar {
-        background-color: #5CDB95;
+        background-color: #ce4040;
         color: #EDF5E1;
     }
     .message {

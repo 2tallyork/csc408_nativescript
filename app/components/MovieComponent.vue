@@ -15,14 +15,11 @@ template>
             return {}
         },
         methods: {
-            onNameTap: function (args) {
-                console.log("Item with id: " + args.item.id + " tapped");
-                console.log(args);
-            }
+
         },
-        props: ['movies'],
+        props: ['movie'],
         components: {
-            MovieDetails
+
         },
         mounted() {
         }

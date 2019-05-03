@@ -8,14 +8,12 @@
 </template>
 
 <script>
-    import MovieRentals from '@/components/MovieRentals';
     export default {
         data() {
             return {}
         },
         methods: {
             onTap: function () {
-                console.log("Item with name: " + this.movie.title + " tapped");
                 this.$navigateTo(MovieRentals, {
                     props: {
                         id: this.movie.id
@@ -27,8 +25,7 @@
         components: {
             MovieRentals
         },
-        mounted() {
-        }
+
     }
 </script>
 
